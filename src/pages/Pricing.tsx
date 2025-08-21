@@ -186,6 +186,35 @@ const Pricing = () => {
           </div>
         </section>
 
+        {/* Optional Add-Ons */}
+        <section className="mt-20">
+          <h2 className="text-3xl font-serif text-center mb-12">Optional Add-Ons</h2>
+          <div className="max-w-2xl mx-auto">
+            <Card className="shadow-elegant">
+              <CardContent className="p-8">
+                <ul className="space-y-6">
+                  <li className="flex justify-between items-center">
+                    <span>1 Hour Engagement photo shoot</span>
+                    <span className="text-xl font-bold text-accent-foreground">$100</span>
+                  </li>
+                  <li className="flex justify-between items-center">
+                    <span>Extra hours</span>
+                    <span className="text-xl font-bold text-accent-foreground">$150/person/hour</span>
+                  </li>
+                  <li className="flex justify-between items-center">
+                    <span>30-60 second social media teaser trailer</span>
+                    <span className="text-xl font-bold text-accent-foreground">$150</span>
+                  </li>
+                  <li className="flex justify-between items-center">
+                    <span>Raw photos or video files</span>
+                    <span className="text-xl font-bold text-accent-foreground">$250</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <div className="mt-20 text-center bg-gradient-card p-8 rounded-lg shadow-soft">
           <h3 className="text-2xl font-serif mb-4">Ready to Capture Your Special Day?</h3>
