@@ -30,9 +30,15 @@ All colors MUST be HSL.
     --muted: 20 5% 95%;
     --muted-foreground: 0 0% 45%;
 
-    /* Accent - warm gold for highlights */
-    --accent: 35 100% 85%;
-    --accent-foreground: 0 0% 15%;
+    /* Accent - soft blue */
+    --accent: 217 86% 94%;
+    --accent-foreground: 217 45% 25%;
+    
+    /* Tertiary colors - complementary palette */
+    --tertiary: 37 85% 88%;
+    --tertiary-foreground: 37 45% 25%;
+    --quaternary: 277 35% 85%;
+    --quaternary-foreground: 277 25% 30%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -87,8 +93,13 @@ All colors MUST be HSL.
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 35 100% 70%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 217 70% 80%;
+    --accent-foreground: 217 50% 15%;
+    
+    --tertiary: 37 70% 75%;
+    --tertiary-foreground: 37 40% 20%;
+    --quaternary: 277 25% 70%;
+    --quaternary-foreground: 277 20% 25%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 95%;
