@@ -136,7 +136,7 @@ const Pricing = () => {
       )}
       <CardHeader className="text-center pb-4">
         <CardTitle className="text-2xl font-serif">{pkg.name}</CardTitle>
-        <div className="text-3xl font-bold text-accent">{pkg.price}</div>
+        <div className="text-3xl font-bold text-accent-foreground">{pkg.price}</div>
       </CardHeader>
       <CardContent className="space-y-4">
         <ul className="space-y-3">
