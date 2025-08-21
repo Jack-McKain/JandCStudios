@@ -18,7 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/JandCStudios">
         <div className="min-h-screen bg-background">
           <Header />
           <Routes>
