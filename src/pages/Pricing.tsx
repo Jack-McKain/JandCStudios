@@ -136,7 +136,7 @@ const Pricing = () => {
       )}
       <CardHeader className="text-center pb-4">
         <CardTitle className="text-2xl font-serif">{pkg.name}</CardTitle>
-        <div className="text-3xl font-bold text-accent-foreground">{pkg.price}</div>
+        <div className="text-3xl font-bold text-accent-medium">{pkg.price}</div>
       </CardHeader>
       <CardContent className="space-y-4">
         <ul className="space-y-3">
@@ -195,19 +195,19 @@ const Pricing = () => {
                 <ul className="space-y-6">
                   <li className="flex justify-between items-center">
                     <span>1 Hour Engagement photo shoot</span>
-                    <span className="text-xl font-bold text-accent-foreground">$100</span>
+                    <span className="text-xl font-bold text-accent-medium">$100</span>
                   </li>
                   <li className="flex justify-between items-center">
                     <span>Extra hours</span>
-                    <span className="text-xl font-bold text-accent-foreground">$150/person/hour</span>
+                    <span className="text-xl font-bold text-accent-medium">$150/person/hour</span>
                   </li>
                   <li className="flex justify-between items-center">
                     <span>30-60 second social media teaser trailer</span>
-                    <span className="text-xl font-bold text-accent-foreground">$150</span>
+                    <span className="text-xl font-bold text-accent-medium">$150</span>
                   </li>
                   <li className="flex justify-between items-center">
                     <span>Raw photos or video files</span>
-                    <span className="text-xl font-bold text-accent-foreground">$250</span>
+                    <span className="text-xl font-bold text-accent-medium">$250</span>
                   </li>
                 </ul>
               </CardContent>

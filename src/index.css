@@ -33,6 +33,7 @@ All colors MUST be HSL.
     /* Accent - soft blue */
     --accent: 217 86% 94%;
     --accent-foreground: 217 45% 25%;
+    --accent-medium: 217 45% 35%;
     
     /* Tertiary colors - complementary palette */
     --tertiary: 37 85% 88%;
@@ -95,6 +96,7 @@ All colors MUST be HSL.
 
     --accent: 217 70% 80%;
     --accent-foreground: 217 50% 15%;
+    --accent-medium: 217 50% 25%;
     
     --tertiary: 37 70% 75%;
     --tertiary-foreground: 37 40% 20%;
