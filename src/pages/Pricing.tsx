@@ -130,13 +130,13 @@ const Pricing = () => {
   const PackageCard = ({ pkg, isCombo = false }: { pkg: any; isCombo?: boolean }) => (
     <Card className={`relative shadow-elegant hover:shadow-2xl transition-all duration-300 ${pkg.popular ? 'ring-2 ring-accent' : ''}`}>
       {pkg.popular && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1">
+        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-medium px-4 py-1">
           Most Popular
         </Badge>
       )}
       <CardHeader className="text-center pb-4">
         <CardTitle className="text-2xl font-serif">{pkg.name}</CardTitle>
-        <div className="text-3xl font-bold text-accent">{pkg.price}</div>
+        <div className="text-3xl font-bold text-accent-medium">{pkg.price}</div>
       </CardHeader>
       <CardContent className="space-y-4">
         <ul className="space-y-3">
@@ -183,6 +183,35 @@ const Pricing = () => {
             {comboPackages.map((pkg) => (
               <PackageCard key={pkg.name} pkg={pkg} isCombo={true} />
             ))}
+          </div>
+        </section>
+
+        {/* Optional Add-Ons */}
+        <section className="mt-20">
+          <h2 className="text-3xl font-serif text-center mb-12">Optional Add-Ons</h2>
+          <div className="max-w-2xl mx-auto">
+            <Card className="shadow-elegant">
+              <CardContent className="p-8">
+                <ul className="space-y-6">
+                  <li className="flex justify-between items-center">
+                    <span>1 Hour Engagement photo shoot</span>
+                    <span className="text-xl font-bold text-accent-medium">$100</span>
+                  </li>
+                  <li className="flex justify-between items-center">
+                    <span>Extra hours</span>
+                    <span className="text-xl font-bold text-accent-medium">$150/person/hour</span>
+                  </li>
+                  <li className="flex justify-between items-center">
+                    <span>30-60 second social media teaser trailer</span>
+                    <span className="text-xl font-bold text-accent-medium">$150</span>
+                  </li>
+                  <li className="flex justify-between items-center">
+                    <span>Raw photos or video files</span>
+                    <span className="text-xl font-bold text-accent-medium">$250</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
