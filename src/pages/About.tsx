@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 
 const About = () => {
+  console.log('About component is rendering');
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -24,11 +25,11 @@ const About = () => {
             <Card className="group overflow-hidden shadow-elegant hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-0">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="/images/JackandCarolinePhoto.jpg" 
-                    alt="Photo of Jack and Caroline" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  <div 
+                    className="w-full h-full bg-gradient-card flex items-center justify-center text-muted-foreground"
+                  >
+                    Photo Placeholder
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-serif mb-2">Meet the Team</h3>
@@ -42,11 +43,11 @@ const About = () => {
             <Card className="group overflow-hidden shadow-elegant hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-0">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="/images/AbbyandAndrew1.jpeg" 
-                    alt="Sample wedding photography" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  <div 
+                    className="w-full h-full bg-gradient-card flex items-center justify-center text-muted-foreground"
+                  >
+                    Sample Work Placeholder
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-serif mb-2">Our Style</h3>
