@@ -130,7 +130,7 @@ const Pricing = () => {
   const PackageCard = ({ pkg, isCombo = false }: { pkg: any; isCombo?: boolean }) => (
     <Card className={`relative shadow-elegant hover:shadow-2xl transition-all duration-300 ${pkg.popular ? 'ring-2 ring-accent' : ''}`}>
       {pkg.popular && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1">
+        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-medium px-4 py-1">
           Most Popular
         </Badge>
       )}
