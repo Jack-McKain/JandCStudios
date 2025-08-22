@@ -25,11 +25,11 @@ const About = () => {
             <Card className="group overflow-hidden shadow-elegant hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-0">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <div 
-                    className="w-full h-full bg-gradient-card flex items-center justify-center text-muted-foreground"
-                  >
-                    Photo Placeholder
-                  </div>
+                  <img 
+                    src="/images/JackandCarolinePhoto.jpg" 
+                    alt="Jack and Caroline - Photography duo"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-serif mb-2">Meet the Team</h3>
@@ -43,11 +43,11 @@ const About = () => {
             <Card className="group overflow-hidden shadow-elegant hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-0">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <div 
-                    className="w-full h-full bg-gradient-card flex items-center justify-center text-muted-foreground"
-                  >
-                    Sample Work Placeholder
-                  </div>
+                  <img 
+                    src="/images/animal_eagle.jpg" 
+                    alt="Sample photography work - Eagle"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-serif mb-2">Our Style</h3>
