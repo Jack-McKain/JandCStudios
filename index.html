@@ -1,47 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J&CStudios</title>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".main-nav");
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>J&CStudios</title>
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".main-nav");
 
-    toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-    });
-    });
-</script>
-<body>
-    <header class="site-header">
-        <div class="header-content">
-            <h2 class="logo">J&C Studios</h2>
-            <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
-            <nav class="main-nav">
-            <a href="index.html">About Us</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="gear.html">Gear</a>
-            <a href="contact.html">Contact Us</a>
-            </nav>
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
+        });
+    </script>
+    <body>
+        <header class="site-header">
+            <div class="header-content">
+                <h2 class="logo">J&C Studios</h2>
+                <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+                <nav class="main-nav">
+                <a href="index.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="gear.html">Gear</a>
+                <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section id="aboutus-photo">
+                <div class="gear-row">
+                    <div class="gear-item">
+                    <img src="images/JackandCarolinePhoto.jpg" alt="Jack and Caroline">
+                </div>
+            </section>
+            <section id="about">
+                <h2>About Us</h2>
+                    <p>Hi! We’re Jack and Caroline — a husband-and-wife photo and video team who love capturing life’s most meaningful moments. As a couple, we know how important it is to preserve memories that you can look back on forever, and we bring that same care and excitement to every wedding, engagement, and event we shoot.</p>
+
+                    <p>Our focus is simple: authentic, timeless photography and videography at a price that won’t break the bank. We believe everyone deserves beautiful memories of their special day, and we work closely with you to create a relaxed, enjoyable experience from start to finish.</p>
+
+                    <p>While weddings are our specialty, we also love photographing engagements, family portraits, and all kinds of life events. Whether you’re saying “I do,” celebrating milestones, or just want to capture a season of life, we’d be honored to be part of it.</p>
+
+                    <p>Let’s create something together that you’ll treasure for years to come!</p>
+                    
+            </section>
+            <section id="Differnt-events">
+                <h2>We would love to caputure your big days!</h2>
+                <div class="gear-row">
+                    <div class="gear-item">
+                    <img src="gearPhotos/Sigma2470.jpg" alt="Sigma 24-70mm f/2.8">
+                    <p>Sigma 24-70mm f/2.8</p>
+                    </div>
+                    <div class="gear-item">
+                    <img src="gearPhotos/sigma85.jpg" alt="Sigma 85mm f/1.4">
+                    <p>Sigma 85mm f/1.4</p>
+                    </div>
+                    <div class="gear-item">
+                    <img src="gearPhotos/sony70200.png" alt="Sony FE 70-200mm f/4">
+                    <p>Sony FE 70-200mm f/4</p>
+                    </div>
+                    <div class="gear-item">
+                    <img src="gearPhotos/sigma1850.jpg" alt="Sigma 18-50mm f/2.8">
+                    <p>Sigma 18-50mm f/2.8</p>
+                    </div>
+                    <div class="gear-item">
+                    <img src="gearPhotos/sigma30.jpg" alt="Sigma 30mm f/1.4">
+                    <p>Sigma 30mm f/1.4</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 J&amp;C Studios. All rights reserved.</p>
+
+            <div class="social-links">
+            <a href="https://www.instagram.com/" target="https://www.instagram.com/j.and.c.studios/">Instagram</a>
+            <a href="https://www.facebook.com/" target="https://www.facebook.com/caroline.romick.961">Facebook</a>
+            <a href="https://www.youtube.com/" target="https://www.youtube.com/@J-and-C-Studios">YouTube</a>
+            </div>
+
+            <p class="footer-note">
+            Capturing your memories
+            </p>
         </div>
-    </header>
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are Jack and Caroline, photo/ video duo excited to capture your best moments.</p>
-        </section>
-        <section id="photos">
-            <h2>Our Work</h2>
-            <img src="images/JackandCarolinePhoto.jpg" alt="Photo of us" width="300">
-            <img src="images/AbbyandAndrew1.jpeg" alt="Sample Photo 2" width="300">
-            <!-- Add more photos as needed -->
-        </section>
-    
-    </main>
-</body>
+    </footer>
 </html>

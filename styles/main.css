@@ -510,3 +510,46 @@ button:hover {
     border-radius: 12px;
     border: 2px solid #ffffff;
 }
+
+.aboutus-photo {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+/* =========================
+   Footer
+========================= */
+.site-footer {
+    background: #111;
+    color: #eee;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.site-footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-footer .social-links {
+    margin: 15px 0;
+}
+
+.site-footer .social-links a {
+    color: #67addb;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.site-footer .social-links a:hover {
+    color: #fff;
+}
+
+.site-footer .footer-note {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #bbb;
+}
