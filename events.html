@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - J&CStudios</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".main-nav");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+    });
+    });
+</script>
+<script>
+    const slideshows = {};
+    function showSlides(section, n) {
+        const slides = document.querySelectorAll(`#${section}-slideshow .slide`);
+        if (!slides.length) return;
+        if (!slideshows[section] && slideshows[section] !== 0) slideshows[section] = 0;
+        if (n >= slides.length) slideshows[section] = 0;
+        else if (n < 0) slideshows[section] = slides.length - 1;
+        else slideshows[section] = n;
+        slides.forEach((img, i) => img.style.display = (i === slideshows[section] ? "block" : "none"));
+    }
+
+    function plusSlides(section, n) {
+        if (slideshows[section] == null) slideshows[section] = 0;
+        showSlides(section, slideshows[section] + n);
+    }
+    
+    window.onload = function() {
+        const sections = ['wedding', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
+        sections.forEach(section => showSlides(section, 0));
+    };
+</script>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h2 class="logo">J&C Studios</h2>
+            <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+            <nav class="main-nav">
+            <a href="index.html">About Us</a>
+            <a href="weddings.html">Weddings</a>
+            <a href="events.html">Events</a>
+            <a href="gear.html">Gear</a>
+            <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+<section id="events">
+    <h2>Events</h2>
+    <div class="slideshow-container" id="events-slideshow">
+        <img class="slide" src="images/event_theata.jpg" alt="Event - Theta" style="display:none;" loading="lazy">
+        <img class="slide" src="images/event_theata1.jpg" alt="Event - Theta 1" style="display:none;" loading="lazy">
+        <img class="slide" src="images/event_jacob.jpg" alt="Event - Jacob" style="display:none;" loading="lazy">
+        <img class="slide" src="images/events_Javon.jpg" alt="Event - Javon" style="display:none;" loading="lazy">
+        
+        <button class="prev" onclick="plusSlides('events', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('events', 1)">&#10095;</button>
+    </div>
+</section>
+<section id="headshots">
+    <h2>Portraits</h2>
+    <div class="slideshow-container" id="headshots-slideshow">
+        <img class="slide" src="images/couples_jensen5.jpg" alt="Couples Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/couples_jensen4.jpg" alt="Couples Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Landers1.jpg" alt="Family Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Landers2.jpg" alt="Family Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Garde1.jpg" alt="Family Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Garde2.jpg" alt="Family Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/headshot_Caroline.jpg" alt="Headshot - Caroline" style="display:block;" loading="lazy">
+        <img class="slide" src="images/headshot_Us.jpg" alt="Headshot - Us" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Landers3.jpg" alt="Family Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Landers4.jpg" alt="Family Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Garde3.jpg" alt="Family Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Garde4.jpg" alt="Family Portraits" style="display:none;" loading="lazy">
+        <img class="slide" src="images/couples_jensen1.jpg" alt="Couples Portraits" style="display:none;" loading="lazy">
+        
+        <button class="prev" onclick="plusSlides('headshots', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('headshots', 1)">&#10095;</button>
+    </div>
+</section>
+<section id="animal">
+    <h2>Pets & Wildlife</h2>
+    <div class="slideshow-container" id="animal-slideshow">
+        <img class="slide" src="images/animal_dolly.jpg" alt="Animal - Dolly" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_mable.jpg" alt="Animal - Mable" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_birdBill.JPG" alt="Animal - Bird Bill" style="display:block;" loading="lazy">
+        <img class="slide" src="images/animal_blueBird.JPG" alt="Animal - Blue Bird" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_Clem.jpg" alt="Animal - Clem" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_eagle.jpg" alt="Animal - Eagle" style="display:none;" loading="lazy">
+        <img class="slide" src="images/event_horse2.jpg" alt="Event - Horse 2" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_eagleFly.JPG" alt="Animal - Eagle Fly" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_fox.jpg" alt="Animal - Fox" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_monkey.JPG" alt="Animal - Monkey" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_Puffin.JPG" alt="Animal - Puffin" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_seagullBridge.jpg" alt="Animal - Seagull Bridge" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_eagleWet.jpg" alt="Animal - Eagle Wet" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_seagullStare.jpg" alt="Animal - Seagull Stare" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animals_seagullFlock.jpg" alt="Animals - Seagull Flock" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_snake.jpg" alt="Animal - Snake" style="display:none;" loading="lazy">
+        <img class="slide" src="images/animal_Yumi.jpg" alt="Animal - Yumi" style="display:none;" loading="lazy">
+        <img class="slide" src="images/Event_Horse.jpg" alt="Event - Horse" style="display:block;" loading="lazy">
+        
+        <button class="prev" onclick="plusSlides('animal', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('animal', 1)">&#10095;</button>
+    </div>
+</section>
+<!-- <section id="nature">
+    <h2>Nature</h2>
+    <div class="slideshow-container" id="nature-slideshow">
+        <img class="slide" src="images/nature_muirWoods.JPG" alt="Nature - Muir Woods" style="display:block;">
+        <img class="slide" src="images/nature_pinkFlower.jpg" alt="Nature - Pink Flower" style="display:none;">
+        <img class="slide" src="images/nature_orangeFlower2.JPG" alt="Nature - Orange Flower 2" style="display:none;">
+        <img class="slide" src="images/nature_salmonFloer.JPG" alt="Nature - Salmon Flower" style="display:none;">
+        <img class="slide" src="images/nature_purpleFlower2.jpg" alt="Nature - Purple Flower 2" style="display:none;">
+        
+        <button class="prev" onclick="plusSlides('nature', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('nature', 1)">&#10095;</button>
+    </div>
+</section> -->
+<section id="cars">
+    <h2>Cars</h2>
+    <div class="slideshow-container" id="cars-slideshow">
+        <img class="slide" src="images/car_cuda.jpg" alt="Car - Cuda" style="display:block;" loading="lazy">
+        <img class="slide" src="images/JackM2.jpg" alt="Car - M2" style="display:none;" loading="lazy">
+        <img class="slide" src="images/car_FordGT.jpg" alt="Car - Ford GT" style="display:none;" loading="lazy">
+        <img class="slide" src="images/car_lotus.jpg" alt="Car - Lotus" style="display:none;" loading="lazy">
+        <img class="slide" src="images/car_shifter.jpg" alt="Car - Shifter" style="display:none;" loading="lazy">
+        <img class="slide" src="images/JackM2.jpg" alt="Car - M2" style="display:none;" loading="lazy">
+        
+        <button class="prev" onclick="plusSlides('cars', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('cars', 1)">&#10095;</button>
+    </div>
+</section>
+
+</section>
+    <section id="pricing">
+    <h2 class="pricing-title">Photo Pricing</h2>
+    <div class="pricing-1x1">
+        <div class="package-box">
+            <div class="package-header">
+                <span class="package-name">30 Min Session</span>
+                <span class="package-price">$100</span>
+            </div>
+        </div>
+        <div class="package-box best-value">
+        <div class="best-badge">Most Popular</div>
+            <div class="package-header">
+                <span class="package-name">Hourly Rate</span>
+                <span class="package-price">$150</span>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="pricing-title">Video Pricing</h2>
+    <div class="pricing-1x1">
+        <div class="package-box">
+            <div class="package-header">
+                <span class="package-name">Hourly Rate</span>
+                <span class="package-price">$120*</span>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="pricing-title">Optional Add-Ons:</h3>
+        <div class="addons-box">
+            <ul>
+                <li>Extra hours: <strong>$150/person/hour</strong></li>
+            </ul>
+        </div>
+    <h6 class = "astrix">* Hourly rate also includes time editing</h6>
+</section>
+    </main>
+</body>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 J&amp;C Studios. All rights reserved.</p>
+
+            <div class="social-links">
+            <a href="https://www.instagram.com/" target="https://www.instagram.com/j.and.c.studios/">Instagram</a>
+            <a href="https://www.facebook.com/" target="https://www.facebook.com/caroline.romick.961">Facebook</a>
+            <a href="https://www.youtube.com/" target="https://www.youtube.com/@J-and-C-Studios">YouTube</a>
+            </div>
+
+            <p class="footer-note">
+            <h4>Timeless Photos</h4>
+            <h4>Authentic Videos</h4>
+            </p>
+        </div>
+    </footer>
+</html>

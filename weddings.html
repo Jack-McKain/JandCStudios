@@ -16,6 +16,67 @@
     });
     });
 </script>
+<script>
+    const slideshows = {};
+    function showSlides(section, n) {
+        const slides = document.querySelectorAll(`#${section}-slideshow .slide`);
+        if (!slides.length) return;
+        if (!slideshows[section] && slideshows[section] !== 0) slideshows[section] = 0;
+        if (n >= slides.length) slideshows[section] = 0;
+        else if (n < 0) slideshows[section] = slides.length - 1;
+        else slideshows[section] = n;
+        slides.forEach((img, i) => img.style.display = (i === slideshows[section] ? "block" : "none"));
+    }
+
+    function plusSlides(section, n) {
+        if (slideshows[section] == null) slideshows[section] = 0;
+        showSlides(section, slideshows[section] + n);
+    }
+    
+    window.onload = function() {
+        const sections = ['wedding', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
+        sections.forEach(section => showSlides(section, 0));
+    };
+</script>
+<script>
+    //Video slideshow handling
+    const slideshowsVideo = {};
+
+    function showSlides(section, n) {
+        const slides = document.querySelectorAll(`#${section}-slideshow .slide`);
+        if (!slides.length) return;
+        if (!Object.prototype.hasOwnProperty.call(slideshowsVideo, section)) slideshowsVideo[section] = 0;
+
+        if (n >= slides.length) slideshowsVideo[section] = 0;
+        else if (n < 0) slideshowsVideo[section] = slides.length - 1;
+        else slideshowsVideo[section] = n;
+
+        slides.forEach((slide, i) => {
+            const visible = i === slideshowsVideo[section];
+            slide.style.display = visible ? "block" : "none";
+
+            // If slide contains an iframe with data-src, only set src when visible to stop background play
+            const iframe = slide.querySelector('iframe[data-src]');
+            if (iframe) {
+                if (visible) {
+                    if (!iframe.src) iframe.src = iframe.dataset.src;
+                } else {
+                    if (iframe.src) iframe.src = '';
+                }
+            }
+        });
+    }
+
+    function plusSlides(section, n) {
+        if (slideshowsVideo[section] == null) slideshowsVideo[section] = 0;
+        showSlides(section, slideshowsVideo[section] + n);
+    }
+
+    window.onload = function() {
+        const sections = ['wedding', 'videos', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
+        sections.forEach(section => showSlides(section, 0));
+    };
+</script>
 <body>
     <header class="site-header">
         <div class="header-content">
@@ -23,14 +84,80 @@
             <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
             <nav class="main-nav">
             <a href="index.html">About Us</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="pricing.html">Pricing</a>
+            <a href="weddings.html">Weddings</a>
+            <a href="events.html">Events</a>
             <a href="gear.html">Gear</a>
             <a href="contact.html">Contact Us</a>
             </nav>
         </div>
     </header>
     <main>
+    <section id="wedding">
+    <h2>Wedding Photos</h2>
+        <div class="slideshow-container" id="wedding-slideshow">
+            <img class="slide" src="images/FoxSun.jpg" alt="Wedding - FoxSun" style="display:none;" loading="lazy">
+            <img class="slide" src="images/FoxBW.jpg" alt="Wedding - FoxBW" style="display:none;" loading="lazy">
+            <img class="slide" src="images/McKain2.jpg" alt="Wedding - McKain" style="display:none;" loading="lazy">
+            <img class="slide" src="images/McKain3.jpg" alt="Wedding - McKain" style="display:none;" loading="lazy">
+            <img class="slide" src="images/FoxRun.jpg" alt="Wedding - FoxRun" style="display:none;" loading="lazy">
+            <img class="slide" src="images/FoxHands.jpg" alt="Wedding - FoxHands" style="display:none;" loading="lazy">
+            <img class="slide" src="images/McKain6.jpg" alt="Wedding - McKain" style="display:none;" loading="lazy">
+            <img class="slide" src="images/McKain4.jpg" alt="Wedding - McKain" style="display:none;" loading="lazy">
+            <img class="slide" src="images/FoxCertificate.jpg" alt="Wedding - FoxCertificate" style="display:none;" loading="lazy">
+            <img class="slide" src="images/wedding_fox1.jpeg" alt="Wedding - Fox 1" style="display:none;" loading="lazy">
+            <img class="slide" src="images/McKain5.jpg" alt="Wedding - McKain" style="display:none;" loading="lazy">
+            <img class="slide" src="images/McKain1.jpg" alt="Wedding - McKain" style="display:none;" loading="lazy">
+            <img class="slide" src="images/FoxLook.jpg" alt="Wedding - FoxLook" style="display:none;" loading="lazy">
+            <img class="slide" src="images/FoxFlowers.jpg" alt="Wedding - FoxFlowers" style="display:none;" loading="lazy">
+            <!-- Add more wedding photos as needed -->
+            <button class="prev" onclick="plusSlides('wedding', -1)">&#10094;</button>
+            <button class="next" onclick="plusSlides('wedding', 1)">&#10095;</button>
+        </div>
+    </section>
+    <section id="videos">
+    <h2>Wedding Videos</h2>
+
+    <div class="slideshow-container" id="videos-slideshow">
+        <div class="slide" style="display:block;">
+        <div class="video-wrapper">
+            <iframe loading="lazy"
+            data-src="https://www.youtube-nocookie.com/embed/2I2owStNf8Y?rel=0"
+            title="Mr. &amp; Mrs. Fox"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+            </iframe>
+        </div>
+        </div>
+
+        <div class="slide" style="display:none;">
+        <div class="video-wrapper">
+            <iframe loading="lazy"
+            data-src="https://www.youtube-nocookie.com/embed/npOzRQ3elC0?rel=0"
+            title="Mr. &amp; Mrs. Sprokett"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+            </iframe>
+        </div>
+        </div>
+
+        <div class="slide" style="display:none;">
+        <div class="video-wrapper">
+            <iframe loading="lazy"
+            data-src="https://www.youtube-nocookie.com/embed/bhLQKGvsLlw?rel=0"
+            title="Mr. &amp; Mrs. Oehler"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+            </iframe>
+        </div>
+        </div>
+
+        <button class="prev" onclick="plusSlides('videos', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('videos', 1)">&#10095;</button>
+    </div>
+    </section>
     <section id="pricing">
     <h2 class="pricing-title">Photo Packages</h2>
     <div class="pricing-3x3">
@@ -200,7 +327,8 @@
             </div>
 
             <p class="footer-note">
-            Capturing your memories
+            <h4>Timeless Photos</h4>
+            <h4>Authentic Videos</h4>
             </p>
         </div>
     </footer>
