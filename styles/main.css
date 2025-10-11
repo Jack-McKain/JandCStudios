@@ -224,18 +224,16 @@ section {
     box-sizing: border-box;
 }
 
-/* Slideshow */
 .slideshow-container {
     position: relative;
     width: 100%;
     max-width: 1200px;
     aspect-ratio: 1 / 1;
     margin: 0 auto 32px;
-    background-color: #ffffff;
+    background-color: #000000;
     overflow: hidden;
 }
 
-/* Fallback for browsers that don’t support aspect-ratio */
 @supports not (aspect-ratio: 1/1) {
     .slideshow-container {
         height: 0;
@@ -253,7 +251,7 @@ section {
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 20px;
+    border-radius: 0px;
     display: none;
 }
 
@@ -661,41 +659,36 @@ button:hover {
 /* =========================
    Videos
 ========================= */
-/* Make videos slideshow size by its video-wrapper (not forced square) */
 #videos-slideshow.slideshow-container,
 #videos-slideshow {
-    aspect-ratio: auto;    /* disable square forcing for videos */
+    aspect-ratio: auto;
     max-width: 1200px;
     padding-bottom: 0;
     height: auto;
     overflow: visible;
 }
 
-/* Let slides in the videos slideshow flow normally and show first slide by default */
 #videos-slideshow .slide {
-    position: static;      /* allow slide to contribute to container height */
+    position: static;
     inset: auto;
     transform: none;
-    display: none;         /* hidden by default; script may toggle */
+    display: none;
 }
 
-/* Ensure the first slide is visible before JS runs (prevents collapsed container) */
 #videos-slideshow .slide:first-child {
     display: block;
 }
 
-/* Ensure the video-wrapper inside slide keeps a 16:9 area */
 #videos-slideshow .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 8px;
     background: #000;
 }
 
-/* Make iframe fill the video-wrapper */
 #videos-slideshow .video-wrapper iframe {
     position: absolute;
     top: 0; left: 0;
@@ -703,6 +696,138 @@ button:hover {
     height: 100%;
     border: 0;
     display: block;
+}
+
+/* =========================
+   About Us Section
+========================= */
+
+#aboutus {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.aboutus-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.aboutus-sectionOther {
+  
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  padding: 80px 0;
+  background-color: #94b4c9;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.aboutus-sectionOther .aboutus-inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 clamp(20px, 5vw, 40px);
+  box-sizing: border-box;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aboutus-sectionOther .aboutus-photo,
+.aboutus-sectionOther .aboutus-text {
+  flex: 1 1 480px;
+  max-width: 600px;
+  padding: 0 24px;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .aboutus-sectionOther {
+    padding: 28px 0;
+  }
+  .aboutus-sectionOther > .aboutus-photo,
+  .aboutus-sectionOther > .aboutus-text {
+    max-width: 100%;
+    flex: 1 1 100%;
+    padding: 0 16px;
+    text-align: center;
+  }
+}
+
+.aboutus-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.aboutus-text h2 {
+  font-size: 2em;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+.aboutus-text p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+  font-size: 36px;
+  color: #333;
+}
+
+.aboutus-photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.aboutus-photo img {
+    width: 100%;
+    max-width: 400px; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border: 3px solid #000;
+}
+
+@media (max-width: 768px) {
+  .aboutus-section,
+  .aboutus-section.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutus-text {
+    text-align: center;
+  }
+
+  .aboutus-photo img {
+        max-width: 300px;
+    }
+}
+
+
+html, body {
+  overflow-x: hidden;
 }
 
 
