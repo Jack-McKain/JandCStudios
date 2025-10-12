@@ -732,7 +732,7 @@ button:hover {
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
 }
@@ -755,20 +755,6 @@ button:hover {
   padding: 0 24px;
   margin: 0;
   box-sizing: border-box;
-  text-align: right;
-}
-
-@media (max-width: 768px) {
-  .aboutus-sectionOther {
-    padding: 28px 0;
-  }
-  .aboutus-sectionOther > .aboutus-photo,
-  .aboutus-sectionOther > .aboutus-text {
-    max-width: 100%;
-    flex: 1 1 100%;
-    padding: 0 16px;
-    text-align: center;
-  }
 }
 
 .aboutus-text {
