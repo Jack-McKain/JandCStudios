@@ -578,26 +578,52 @@ button:hover {
 }
 
 .gear-row {
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-    flex-wrap: wrap;
-    align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gear-item {
-    max-width: 250px;
-    text-align: center;
+  width: 100%;
+  max-width: 250px; 
+  text-align: center;
+  justify-self: center;
 }
 
 .gear-item img {
-    width: 250px;
-    height: 200px;
+    width: 100%;
+    height: 160px;
     object-fit: contain;
     display: block;
     margin: 0 auto;
     border-radius: 10px;
-    border: 2px solid #ffffff;
+    border: 2px solid #fff;
+}
+
+@media (max-width: 768px) {
+  .aboutus-sectionOther .aboutus-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .aboutus-sectionOther .aboutus-photo,
+  .aboutus-sectionOther .aboutus-text {
+    max-width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .aboutus-sectionOther .aboutus-photo img {
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 /* =========================
@@ -720,28 +746,28 @@ button:hover {
 }
 
 .aboutus-sectionOther {
-  
+  position: relative;
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  position: relative;
-  padding: 80px 0;
-  background-color: #94b4c9;
   box-sizing: border-box;
 
+  padding: 80px 0;
+  background-color: #94b4c9;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 .aboutus-sectionOther .aboutus-inner {
   width: 100%;
   max-width: 1200px;
-  padding: 0 clamp(20px, 5vw, 40px);
+  padding: 0 clamp(20px, 5vw, 80px);
   box-sizing: border-box;
+
   display: flex;
   gap: 40px;
   align-items: center;
