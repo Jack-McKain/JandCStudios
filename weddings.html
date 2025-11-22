@@ -6,76 +6,78 @@
     <title>Pricing - J&C Studios</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+<!-- Replace all existing <script> blocks that handle menu/slides with this single script (place near end of <body>) -->
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".main-nav");
+document.addEventListener('DOMContentLoaded', () => {
+  // menu toggle
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) toggle.addEventListener('click', () => nav.classList.toggle('show'));
 
-    toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
+  // unified slideshow manager
+  const slideshows = {};
+
+  function initContainer(container) {
+    const id = container.id || '';
+    const section = id.replace(/-slideshow$/, '');
+    const slides = Array.from(container.querySelectorAll('.slide'));
+    if (!slides.length) return;
+    slideshows[section] = 0;
+    slides.forEach((s, i) => s.style.display = i === 0 ? 'block' : 'none');
+    // load iframe for first slide if present
+    const firstIframe = slides[0].querySelector('iframe[data-src]');
+    if (firstIframe && !firstIframe.src) firstIframe.src = firstIframe.dataset.src;
+  }
+
+  function showSlide(section, n) {
+    const container = document.getElementById(`${section}-slideshow`);
+    if (!container) return;
+    const slides = Array.from(container.querySelectorAll('.slide'));
+    if (!slides.length) return;
+    const len = slides.length;
+    const idx = ((n % len) + len) % len; // wrap properly
+    slideshows[section] = idx;
+    slides.forEach((slide, i) => {
+      const visible = i === idx;
+      slide.style.display = visible ? 'block' : 'none';
+      // manage iframe src only for visible slide to avoid background playback
+      const iframe = slide.querySelector('iframe[data-src]');
+      if (iframe) {
+        if (visible) {
+          if (!iframe.src) iframe.src = iframe.dataset.src;
+        } else {
+          if (iframe.src) iframe.src = '';
+        }
+      }
     });
+  }
+
+  // exposed navigation used by prev/next buttons
+  window.plusSlides = (section, delta) => {
+    if (!Object.prototype.hasOwnProperty.call(slideshows, section)) {
+      const container = document.getElementById(`${section}-slideshow`);
+      if (!container) return;
+      initContainer(container);
+    }
+    showSlide(section, slideshows[section] + delta);
+  };
+
+  // initialize slideshows lazily when they approach viewport to speed initial load
+  const containers = Array.from(document.querySelectorAll('.slideshow-container[id$="-slideshow"]'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      initContainer(entry.target);
+      io.unobserve(entry.target);
     });
-</script>
-<script>
-    const slideshows = {};
-    function showSlides(section, n) {
-        const slides = document.querySelectorAll(`#${section}-slideshow .slide`);
-        if (!slides.length) return;
-        if (!slideshows[section] && slideshows[section] !== 0) slideshows[section] = 0;
-        if (n >= slides.length) slideshows[section] = 0;
-        else if (n < 0) slideshows[section] = slides.length - 1;
-        else slideshows[section] = n;
-        slides.forEach((img, i) => img.style.display = (i === slideshows[section] ? "block" : "none"));
-    }
+  }, { rootMargin: '200px' });
 
-    function plusSlides(section, n) {
-        if (slideshows[section] == null) slideshows[section] = 0;
-        showSlides(section, slideshows[section] + n);
-    }
-    
-    window.onload = function() {
-        const sections = ['wedding', 'engagement', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
-        sections.forEach(section => showSlides(section, 0));
-    };
-</script>
-<script>
-    //Video slideshow handling
-    const slideshowsVideo = {};
-
-    function showSlides(section, n) {
-        const slides = document.querySelectorAll(`#${section}-slideshow .slide`);
-        if (!slides.length) return;
-        if (!Object.prototype.hasOwnProperty.call(slideshowsVideo, section)) slideshowsVideo[section] = 0;
-
-        if (n >= slides.length) slideshowsVideo[section] = 0;
-        else if (n < 0) slideshowsVideo[section] = slides.length - 1;
-        else slideshowsVideo[section] = n;
-
-        slides.forEach((slide, i) => {
-            const visible = i === slideshowsVideo[section];
-            slide.style.display = visible ? "block" : "none";
-
-            // If slide contains an iframe with data-src, only set src when visible to stop background play
-            const iframe = slide.querySelector('iframe[data-src]');
-            if (iframe) {
-                if (visible) {
-                    if (!iframe.src) iframe.src = iframe.dataset.src;
-                } else {
-                    if (iframe.src) iframe.src = '';
-                }
-            }
-        });
-    }
-
-    function plusSlides(section, n) {
-        if (slideshowsVideo[section] == null) slideshowsVideo[section] = 0;
-        showSlides(section, slideshowsVideo[section] + n);
-    }
-
-    window.onload = function() {
-        const sections = ['wedding', 'videos', 'engagement', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
-        sections.forEach(section => showSlides(section, 0));
-    };
+  containers.forEach(c => {
+    const rect = c.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 200 && rect.bottom > -200) initContainer(c);
+    else io.observe(c);
+  });
+});
 </script>
 <body>
     <header class="site-header">
@@ -98,6 +100,7 @@
             <img class="slide" src="images/McKain2.webp" alt="Wedding - McKain" style="display:none;">
             <img class="slide" src="images/FoxSun.webp" alt="Wedding - FoxSun" style="display:none;">
             <img class="slide" src="images/FoxBW.webp" alt="Wedding - FoxBW" style="display:none;">
+            <img class="slide" src="images/Elton1.webp" alt="Wedding - FoxBW" style="display:none;">
             <img class="slide" src="images/McKain3.webp" alt="Wedding - McKain" style="display:none;">
             <img class="slide" src="images/FoxRun.webp" alt="Wedding - FoxRun" style="display:none;">
             <img class="slide" src="images/FoxHands.webp" alt="Wedding - FoxHands" style="display:none;">
@@ -275,7 +278,7 @@
         <div class="package-box">
             <div class="package-header">
                 <span class="package-name">Luxury</span>
-                <span class="package-price">$3500</span>
+                <span class="package-price">$3600</span>
             </div>
             <ul>
                 <li>8 hours of continuous coverage</li>
