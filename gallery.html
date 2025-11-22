@@ -34,7 +34,7 @@
     }
     
     window.onload = function() {
-        const sections = ['wedding', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
+        const sections = ['portraits','wedding', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
         sections.forEach(section => showSlides(section, 0));
     };
 </script>
@@ -46,7 +46,7 @@
             <nav class="main-nav">
             <a href="index.html">About Us</a>
             <a href="weddings.html">Weddings</a>
-            <a href="events.html">Events</a>
+            <a href="gallery.html">Gallery</a>
             <a href="gear.html">Gear</a>
             <a href="contact.html">Contact Us</a>
             </nav>
@@ -54,34 +54,38 @@
     </header>
     <main>
 
-<section id="headshots">
+<section id="portraits">
     <h2>Portraits</h2>
-    <div class="slideshow-container" id="headshots-slideshow">
-        <img class="slide" src="images/Gartner2.webp" alt="Couples Portraits" style="display:none;">
-        <img class="slide" src="images/Gartner3.webp" alt="Couples Portraits" style="display:none;">
+    <div class="slideshow-container" id="portraits-slideshow">
         <img class="slide" src="images/couples_jensen5.webp" alt="Couples Portraits" style="display:none;">
         <img class="slide" src="images/couples_jensen4.webp" alt="Couples Portraits" style="display:none;">
         <img class="slide" src="images/Landers1.webp" alt="Family Portraits" style="display:none;">
         <img class="slide" src="images/Landers2.webp" alt="Family Portraits" style="display:none;">
+        <img class="slide" src="images/Mckay1.webp" alt="Family Portraits" style="display:none;">
+        <img class="slide" src="images/Mckay2.webp" alt="Family Portraits" style="display:none;">
+        <img class="slide" src="images/Mckay3.webp" alt="Family Portraits" style="display:none;">
         <img class="slide" src="images/Garde1.webp" alt="Family Portraits" style="display:none;">
         <img class="slide" src="images/Garde2.webp" alt="Family Portraits" style="display:none;">
-        <img class="slide" src="images/headshot_Caroline.webp" alt="Headshot - Caroline" style="display:block;">
+        <img class="slide" src="images/CarolineWater.webp" alt="Headshot - Caroline" style="display:block;">
         <img class="slide" src="images/JackandCarolinePhoto.webp" alt="Headshot - Us" style="display:none;">
-        <img class="slide" src="images/Gartner1.webp" alt="Couples Portraits" style="display:none;">
-        <img class="slide" src="images/Gartner4.webp" alt="Couples Portraits" style="display:none;">
         <img class="slide" src="images/Landers3.webp" alt="Family Portraits" style="display:none;">
         <img class="slide" src="images/Landers4.webp" alt="Family Portraits" style="display:none;">
+        <img class="slide" src="images/McManus1.webp" alt="Family Portraits" style="display:none;">
+        <img class="slide" src="images/McManus2.webp" alt="Family Portraits" style="display:none;">
+        <img class="slide" src="images/McManus3.webp" alt="Family Portraits" style="display:none;">
         <img class="slide" src="images/Garde3.webp" alt="Family Portraits" style="display:none;">
         <img class="slide" src="images/Garde4.webp" alt="Family Portraits" style="display:none;">
         <img class="slide" src="images/couples_jensen1.webp" alt="Couples Portraits" style="display:none;">
         
-        <button class="prev" onclick="plusSlides('headshots', -1)">&#10094;</button>
-        <button class="next" onclick="plusSlides('headshots', 1)">&#10095;</button>
+        <button class="prev" onclick="plusSlides('portraits', -1)">&#10094;</button>
+        <button class="next" onclick="plusSlides('portraits', 1)">&#10095;</button>
     </div>
 </section>
 <section id="events">
     <h2>Events</h2>
     <div class="slideshow-container" id="events-slideshow">
+        <img class="slide" src="images/Thetasemi1.webp" alt="Event - Theta" style="display:none;">
+        <img class="slide" src="images/Thetasemi2.webp" alt="Event - Theta" style="display:none;">
         <img class="slide" src="images/event_theata.webp" alt="Event - Theta" style="display:none;">
         <img class="slide" src="images/event_theata1.webp" alt="Event - Theta 1" style="display:none;">
         <img class="slide" src="images/event_jacob.webp" alt="Event - Jacob" style="display:none;">
