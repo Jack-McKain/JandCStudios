@@ -34,7 +34,7 @@
     }
     
     window.onload = function() {
-        const sections = ['wedding', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
+        const sections = ['wedding', 'engagement', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
         sections.forEach(section => showSlides(section, 0));
     };
 </script>
@@ -73,7 +73,7 @@
     }
 
     window.onload = function() {
-        const sections = ['wedding', 'videos', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
+        const sections = ['wedding', 'videos', 'engagement', 'events', 'headshots', 'animal', 'nature', 'cars', 'other'];
         sections.forEach(section => showSlides(section, 0));
     };
 </script>
@@ -85,7 +85,7 @@
             <nav class="main-nav">
             <a href="index.html">About Us</a>
             <a href="weddings.html">Weddings</a>
-            <a href="events.html">Events</a>
+            <a href="gallery.html">Gallery</a>
             <a href="gear.html">Gear</a>
             <a href="contact.html">Contact Us</a>
             </nav>
@@ -115,48 +115,63 @@
         </div>
     </section>
     <section id="videos">
-    <h2>Wedding Videos</h2>
+        <h2>Wedding Videos</h2>
 
-    <div class="slideshow-container" id="videos-slideshow">
-        <div class="slide" style="display:block;">
-        <div class="video-wrapper">
-            <iframe
-            data-src="https://www.youtube-nocookie.com/embed/2I2owStNf8Y?rel=0"
-            title="Mr. &amp; Mrs. Fox"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-            </iframe>
-        </div>
-        </div>
+        <div class="slideshow-container" id="videos-slideshow">
+            <div class="slide" style="display:block;">
+            <div class="video-wrapper">
+                <iframe
+                data-src="https://www.youtube-nocookie.com/embed/2I2owStNf8Y?rel=0"
+                title="Mr. &amp; Mrs. Fox"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+                </iframe>
+            </div>
+            </div>
 
-        <div class="slide" style="display:none;">
-        <div class="video-wrapper">
-            <iframe
-            data-src="https://www.youtube-nocookie.com/embed/npOzRQ3elC0?rel=0"
-            title="Mr. &amp; Mrs. Sprokett"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-            </iframe>
-        </div>
-        </div>
+            <div class="slide" style="display:none;">
+            <div class="video-wrapper">
+                <iframe
+                data-src="https://www.youtube-nocookie.com/embed/npOzRQ3elC0?rel=0"
+                title="Mr. &amp; Mrs. Sprokett"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+                </iframe>
+            </div>
+            </div>
 
-        <div class="slide" style="display:none;">
-        <div class="video-wrapper">
-            <iframe
-            data-src="https://www.youtube-nocookie.com/embed/bhLQKGvsLlw?rel=0"
-            title="Mr. &amp; Mrs. Oehler"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-            </iframe>
-        </div>
-        </div>
+            <div class="slide" style="display:none;">
+            <div class="video-wrapper">
+                <iframe
+                data-src="https://www.youtube-nocookie.com/embed/bhLQKGvsLlw?rel=0"
+                title="Mr. &amp; Mrs. Oehler"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+                </iframe>
+            </div>
+            </div>
 
-        <button class="prev" onclick="plusSlides('videos', -1)">&#10094;</button>
-        <button class="next" onclick="plusSlides('videos', 1)">&#10095;</button>
-    </div>
+            <button class="prev" onclick="plusSlides('videos', -1)">&#10094;</button>
+            <button class="next" onclick="plusSlides('videos', 1)">&#10095;</button>
+        </div>
+    </section>
+    <section id="engagement">
+    <h2>Engagement Photos</h2>
+        <div class="slideshow-container" id="engagement-slideshow">
+            <img class="slide" src="images/Gartner1.webp" alt="engagement - Gartner" style="display:none;">
+            <img class="slide" src="images/Gartner2.webp" alt="engagement - Gartner" style="display:none;">
+            <img class="slide" src="images/Gartner3.webp" alt="engagement - Gartner" style="display:none;">
+            <img class="slide" src="images/Gartner4.webp" alt="engagement - Gartner" style="display:none;">
+            <img class="slide" src="images/Fidder1.webp" alt="engagement - Fidder" style="display:none;">
+            <img class="slide" src="images/Fidder2.webp" alt="engagement - Fidder" style="display:none;">
+            <img class="slide" src="images/Fidder5.webp" alt="engagement - Fidder" style="display:none;">
+                        
+            <button class="prev" onclick="plusSlides('engagement', -1)">&#10094;</button>
+            <button class="next" onclick="plusSlides('engagement', 1)">&#10095;</button>
+        </div>
     </section>
     <section id="pricing">
     <h2 class="pricing-title">Photo Packages</h2>
@@ -170,9 +185,6 @@
                 <li>6 hours of continuous coverage</li>
                 <li>1 Photographer</li>
                 <li>~300 edited photos</li>
-                <li>Unlimited locations</li>
-                <li>Digital gallery</li>
-                <li>Print release</li>
             </ul>
         </div>
         <div class="package-box best-value">
@@ -185,9 +197,6 @@
                 <li>8 hours of continuous coverage</li>
                 <li>2 Photographers</li>
                 <li>~400 edited photos</li>
-                <li>Unlimited locations</li>
-                <li>Digital gallery</li>
-                <li>Print release</li>
             </ul>
         </div>
         <div class="package-box">
@@ -199,10 +208,7 @@
                 <li>10 hours of continuous coverage</li>
                 <li>2 Photographers</li>
                 <li>~500 edited photos</li>
-                <li>Unlimited locations</li>
-                <li>Digital gallery</li>
                 <li>Includes Engagement Photoshoot</li>
-                <li>Print release</li>
                 <li>Raw images included</li>
             </ul>
         </div>
@@ -218,8 +224,8 @@
             <ul>
                 <li>6 hours of continuous coverage</li>
                 <li>1 Videographer</li>
+                <li>2 Camera Angles</li>
                 <li>2-4 minute highlight video</li>
-                <li>Unlimited locations</li>
             </ul>
         </div>
         <div class="package-box best-value">
@@ -231,8 +237,8 @@
             <ul>
                 <li>8 hours of continuous coverage</li>
                 <li>2 Videographers</li>
+                <li>3 Camera Angles</li>
                 <li>4-6 minute highlight video</li>
-                <li>Unlimited locations</li>
                 <li>Big Moments*</li>
             </ul>
         </div>
@@ -244,8 +250,8 @@
             <ul>
                 <li>10 hours of continuous coverage</li>
                 <li>2 Videographers</li>
+                <li>3 Camera Angles</li>
                 <li>6-8 minute highlight video</li>
-                <li>Unlimited locations</li>
                 <li>Big Moments*</li>
                 <li>Raw video files included</li>
             </ul>
@@ -257,31 +263,25 @@
         <div class="package-box">
             <div class="package-header">
                 <span class="package-name">Classic</span>
-                <span class="package-price">$2900</span>
+                <span class="package-price">$3100</span>
             </div>
             <ul>
                 <li>6 hours of continuous coverage</li>
                 <li>1 Photographer + 1 Videographer</li>
                 <li>~300 edited photos</li>
                 <li>2-4 minute highlight video</li>
-                <li>Unlimited locations</li>
-                <li>Digital gallery</li>
-                <li>Print release</li>
             </ul>
         </div>
         <div class="package-box">
             <div class="package-header">
                 <span class="package-name">Luxury</span>
-                <span class="package-price">$3400</span>
+                <span class="package-price">$3500</span>
             </div>
             <ul>
                 <li>8 hours of continuous coverage</li>
                 <li>1 Photographer + 1 Videographer</li>
                 <li>~400 edited photos</li>
                 <li>4-6 minute highlight video</li>
-                <li>Unlimited locations</li>
-                <li>Digital gallery</li>
-                <li>Print release</li>
                 <li>Big Moments*</li>
             </ul>
         </div>
@@ -289,22 +289,30 @@
         <div class="best-badge">Best Value</div>
             <div class="package-header">
                 <span class="package-name">Timeless</span>
-                <span class="package-price">$3900</span>
+                <span class="package-price">$4200</span>
             </div>
             <ul>
                 <li>10 hours of continuous coverage</li>
                 <li>1 Photographer + 1 Videographer</li>
                 <li>~500 edited photos</li>
                 <li>6-8 minute highlight video</li>
-                <li>Unlimited locations</li>
-                <li>Digital gallery</li>
                 <li>Includes Engagement Photoshoot</li>
-                <li>Print release</li>
                 <li>Big Moments*</li>
                 <li>Raw image + video files included</li>
             </ul>
         </div>
     </div>
+    <h3 class="pricing-title">Included with every package:</h3>
+        <div class="addons-box">
+            <ul>
+                <li>1 Hour Plannning Meeting</li>
+                <li>Timeline Assistance</li>
+                <li>Unlimited locations</li>
+                <li>Digital gallery</li>
+                <li>Print release</li>
+
+            </ul>
+        </div>
     <h3 class="pricing-title">Optional Add-Ons:</h3>
         <div class="addons-box">
             <ul>
